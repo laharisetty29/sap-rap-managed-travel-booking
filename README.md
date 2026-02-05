@@ -101,6 +101,7 @@ lock master
   update;
   delete;
 }
+
 ---
 ### 6️⃣ Service Definition
 
@@ -109,6 +110,7 @@ Service: ZUI_RAP_BOOK
 Exposes the root CDS entity
 
 ---
+
 ### 7️⃣ Service Binding
 
 - Binding Type: OData V2 – UI
