@@ -107,12 +107,14 @@ lock master
 Service: ZUI_RAP_BOOK
 
 Exposes the root CDS entity
+
 ---
 ### 7️⃣ Service Binding
 
 - Binding Type: OData V2 – UI
 - Service is activated and published
 - Fiori Elements preview application is launched directly from ADT
+
 ---
 ### 🚀 Application Capabilities
 
@@ -122,6 +124,7 @@ Exposes the root CDS entity
 - Delete booking records
 
 All operations are available directly in the generated Fiori UI.
+
 ---
 ### 🎓 Learning Outcomes
 
@@ -131,12 +134,14 @@ All operations are available directly in the generated Fiori UI.
 - Automatic UI generation with Fiori Elements
 - Role of metadata extensions in UI behavior
 - Conceptual differences between managed and unmanaged RAP
+
 ---
 ### ⚠️ Common Issues & Notes
 
 - If the preview does not load, re-activate the service definition and service binding
 - Missing fields in the UI usually indicate issues in metadata extensions
 - Authorization checks are skipped for learning purposes
+
 ---
 ### 🔮 Next Steps for Enhancement
 
