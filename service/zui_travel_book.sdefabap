@@ -1,0 +1,4 @@
+@EndUserText.label: 'service defination for travel book'
+define service Zui_travel_book {
+  expose ZI_travel_book;
+}

@@ -1,0 +1,10 @@
+managed implementation in class zbp_i_travel_book unique;
+
+define behavior for ZI_travel_book
+persistent table ztb_travel_book
+lock master
+{
+  create;
+  update;
+  delete;
+}
