@@ -1,28 +1,28 @@
 # SAP RAP Managed Scenario – Booking App
 
-This repository contains a **basic SAP RAP Managed Scenario** implemented using **ABAP Development Tools (ADT) in Eclipse** on **SAP BTP – ABAP Environment**.
+This repository provides a **basic SAP RAP Managed Scenario** example created using **ABAP Development Tools (ADT) in Eclipse**.
 
-The project demonstrates how a single database table can be exposed as an **OData service** and automatically rendered as a **Fiori Elements application** using the **ABAP RESTful Application Programming Model (RAP)**.
+The project demonstrates how to expose a **single database table** as an **OData service** and automatically generate a **Fiori Elements application** using the **ABAP RESTful Application Programming Model (RAP)**.
 
-This example is based on a **Travel Booking business object** and is intended as a **step-by-step learning project for beginners**.
+This example is based on a **Booking** business object and is designed to help beginners understand the RAP flow step by step.
 
 ---
 
-## 📌 Project Overview
+## Project Overview
 
-This implementation showcases:
+This implementation includes:
 
 - RAP Managed Scenario (no custom save logic)
 - OData service creation using RAP
 - Automatic Fiori Elements UI generation
 - CRUD operations without UI coding
-- Clean and simple RAP architecture for learning
+- Clean RAP structure suitable for learning
 
 ---
 
-## 🧩 Business Scenario
+## Business Scenario
 
-The application represents a **Travel Booking system** with the following fields:
+The application is a simple **Travel Booking** system with the following fields:
 
 - Travel ID  
 - Booking ID  
@@ -36,7 +36,7 @@ The application represents a **Travel Booking system** with the following fields
 
 ---
 
-## 🛠 Development Environment
+## Development Environment
 
 - ABAP Development Tools (ADT) in Eclipse  
 - SAP BTP – ABAP Environment  
@@ -45,50 +45,42 @@ All repository objects were **manually created in Eclipse**.
 
 ---
 
-## ⚙️ Implementation Flow
+## Implementation Steps
 
-### 1️⃣ Database Table
+### 1. Database Table
 **Table:** `ZJP_RAP_BOOK`
 
-- Stores booking data
-- Initial demo records copied from `/DMO/BOOKING`
+Stores booking data, with initial sample records copied from `/DMO/BOOKING`.
 
 ---
 
-### 2️⃣ Data Provider Class
+### 2. Data Provider Class
 **Class:** `ZJP_BOOK_DATA`
 
-- Deletes existing records
-- Inserts sample booking data from `/DMO/BOOKING`
-- Used only for demo and testing purposes
+- Deletes existing data
+- Inserts sample records from `/DMO/BOOKING`
+- Used only for demo/testing
 
-📌 Execute the class once to populate the table.
+Execute the class once to populate the table.
 
 ---
 
-### 3️⃣ Root CDS View Entity
+### 3. Root CDS View Entity
 **Entity:** `ZI_RAP_BOOK`
 
 - Root RAP entity
 - Exposes booking data
-- Acts as the source for OData service generation
+- Used for OData service generation
 
 ---
 
-### 4️⃣ Metadata Extension (UI Annotations)
-
-- Defines list report columns
-- Object page layout
-- Selection fields
-- Header information  
-
-The **Fiori Elements UI is fully driven by CDS annotations**, without writing UI code.
+### 4. Metadata Extension (UI Annotations)
+Defines list report columns, object page layout, selection fields, and header information. The Fiori UI is driven entirely by annotations.
 
 ---
 
-### 5️⃣ Behavior Definition (Managed)
-
-CRUD operations are handled automatically by SAP in the managed scenario.
+### 5. Behavior Definition (Managed)
+CRUD operations are automatically managed by SAP.
 
 ```abap
 managed;
@@ -101,58 +93,68 @@ lock master
   update;
   delete;
 }
+```
 
----
-### 6️⃣ Service Definition
-
-Service: ZUI_RAP_BOOK
-
-Exposes the root CDS entity
+No behavior implementation class is required.
 
 ---
 
-### 7️⃣ Service Binding
+### 6. Service Definition
+**Service:** `ZUI_RAP_BOOK`
 
-- Binding Type: OData V2 – UI
-- Service is activated and published
-- Fiori Elements preview application is launched directly from ADT
+Exposes the root CDS entity.
 
 ---
-### 🚀 Application Capabilities
+
+### 7. Service Binding
+- Binding Type: **OData V2 – UI**
+- Service is activated and published.
+- A preview launches a Fiori Elements application.
+
+---
+
+## Application Capabilities
 
 - View booking list
-- Create new booking records
+- Create new bookings
 - Edit existing bookings
 - Delete booking records
 
-All operations are available directly in the generated Fiori UI.
+All actions work directly in the preview application.
 
 ---
-### 🎓 Learning Outcomes
 
-- This project helps understand:
-- RAP managed scenario architecture
-- How CDS entities are exposed as OData services
+## Learning Outcome
+
+This project introduces the following concepts:
+
+- RAP managed scenario flow
+- How CDS entities become OData services
 - Automatic UI generation with Fiori Elements
-- Role of metadata extensions in UI behavior
+- Importance of metadata extensions
 - Conceptual differences between managed and unmanaged RAP
 
 ---
-### ⚠️ Common Issues & Notes
 
-- If the preview does not load, re-activate the service definition and service binding
-- Missing fields in the UI usually indicate issues in metadata extensions
-- Authorization checks are skipped for learning purposes
+## Common Issues & Notes
+
+- If the preview fails, re-activate the service definition and binding.
+- Missing UI fields usually indicate issues in metadata extensions.
+- Authorization checks are skipped for this learning scenario.
 
 ---
-### 🔮 Next Steps for Enhancement
+
+## Next Steps for Enhancement
 
 - Add authorization objects
-- Implement validations and determinations
-- Explore unmanaged RAP scenarios
+- Incorporate validations
+- Implement unmanaged RAP scenario
 - Introduce associations and compositions
 
-###👩‍💻 Author
+---
+
+## Author
 
 Lahari Gadamsetty
-Created as a hands-on SAP RAP tutorial project using ADT in Eclipse.
+
+Created as a hands-on RAP tutorial project using ADT in Eclipse.
